@@ -27,3 +27,37 @@ def product_detail(request, id, slug):
                   'shop/product/detail.html',
                   {'product': product,
                    'cart_product_form': cart_product_form})
+
+
+def mapa(request):
+    # Coordenadas predeterminadas
+    lat_default = 28.6408325  # Reemplaza con tu latitud
+    lon_default = -106.1485902  # Reemplaza con tu longitud
+    
+    lat = lat_default
+    lon = lon_default
+
+    if request.method == 'POST':
+        try:
+            lat = float(request.POST.get('lat', lat_default))
+            lon = float(request.POST.get('lon', lon_default))
+            
+            # Validar rango de coordenadas
+            if not (-90 <= lat <= 90) or not (-180 <= lon <= 180):
+                raise ValueError("Coordenadas fuera de rango")
+                
+        except (ValueError, TypeError):
+            # Restablecer a valores por defecto en caso de error
+            lat = lat_default
+            lon = lon_default
+
+    return render(request, 'map.html', {
+        'lat': lat,
+        'lon': lon
+    })
+
+    context = {
+        'lat': lat,
+        'lon': lon
+    }
+    return render(request, 'map.html', context)
