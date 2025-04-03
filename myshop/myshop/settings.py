@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop.apps.ShopConfig',
-    'cart.apps.CartConfig',
-    'orders.apps.OrdersConfig',
+    'shop.apps.ShopConfig', # Registra la aplicación "shop" que maneja productos, categorías y catálogo.
+    'cart.apps.CartConfig',  # Registra la aplicación "cart" que maneja el funcionamiento del carrito de compras.
+    'orders.apps.OrdersConfig', # Registra la aplicación "orders" que maneja pedidos y proceso de compra.
 ]
 
 MIDDLEWARE = [
@@ -127,8 +127,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = 'media/' # Define la URL base donde se accederá a los archivos multimedia.
+MEDIA_ROOT = BASE_DIR / 'media' # Define la carpeta donde se guardarán físicamente los archivos multimedia en el servidor.
 
 
-CART_SESSION_ID = 'cart'
+CART_SESSION_ID = 'cart' # Define la clave que se usará para guardar el carrito en la sesión del usuario

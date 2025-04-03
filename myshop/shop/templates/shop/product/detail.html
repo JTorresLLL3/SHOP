@@ -1,8 +1,11 @@
-{% extends "shop/base.html" %}
-{% load static %}
+<!-- 
+Este bloque de plantilla extiende una plantilla base ("shop/base.html") y define el contenido detallado de un producto. 
+Muestra información del producto como imagen, nombre, categoría, precio y descripción. 
+También incluye un formulario para agregar el producto al carrito, manejando correctamente las opciones de cantidad. 
+Si no hay una imagen disponible para el producto, se muestra una imagen por defecto. 
+-->
 
-{% block title %}
-  {{ product.name }}
+
 {% endblock %}
 {% block content %}
   <div class="product-detail">

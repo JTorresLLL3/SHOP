@@ -1,3 +1,12 @@
+"""
+# Este código define dos modelos de base de datos: 'Order' y 'OrderItem'. 
+# 'Order' representa una orden realizada por un cliente, almacenando información como nombre, correo, dirección, y estado de pago.
+# También permite calcular el costo total de la orden con el método 'get_total_cost'. 
+# 'OrderItem' representa los productos incluidos en una orden, asociándolos con un modelo de producto, y permite calcular el costo total de cada ítem. 
+# Ambas clases utilizan relaciones entre sí ('ForeignKey') para vincular órdenes y artículos.
+
+"""
+
 from django.db import models
 from shop.models import Product
 

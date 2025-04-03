@@ -1,3 +1,11 @@
+"""
+Vista que procesa la creación de órdenes:
+1. Obtiene el carrito actual.
+2. Con POST valida y guarda la orden, crea los items asociados y limpia el carrito.
+3. Con GET muestra el formulario vacío con los productos del carrito.
+
+"""
+
 from django.shortcuts import render
 from .models import OrderItem
 from .forms import OrderCreateForm

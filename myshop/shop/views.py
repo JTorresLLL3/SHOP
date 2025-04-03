@@ -1,3 +1,10 @@
+"""
+Vistas para la aplicación shop:
+- product_list: Muestra lista de productos disponibles, con filtro por categoría.
+- product_detail: Muestra los detalles de un producto específico con su formulario para añadir al carrito.
+- mapa: Muestra un mapa con coordenadas, permitiendo actualizar la ubicación mediante POST.
+"""
+
 from django.shortcuts import render, get_object_or_404
 from cart.forms import CartAddProductForm
 from .models import Category, Product

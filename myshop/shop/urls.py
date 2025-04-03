@@ -1,3 +1,10 @@
+"""
+Configuración de URLs para la aplicación 'shop':
+- Define las rutas para las vistas de la tienda.
+- Mapea URLs a funciones de vista con nombres únicos.
+- Incluye patrones para listar productos, filtrar por categoría y ver detalles.
+"""
+
 from django.urls import path
 from . import views
 

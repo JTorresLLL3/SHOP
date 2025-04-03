@@ -1,3 +1,12 @@
+"""
+-Este código define dos modelos de base de datos: 'Category' y 'Product', esenciales para gestionar nuestro e-commerce.
+-'Category' representa las categorías de productos con un nombre y un identificador único ('slug'), proporcionando métodos como 'get_absolute_url' para navegar entre categorías.
+-'Product' representa los productos individuales, vinculados a una categoría a través de una relación ('ForeignKey') y 
+  almacenando información como nombre, descripción, precio, disponibilidad e imágenes.
+-Además, ambos modelos incluyen configuraciones de metadatos para ordenar registros, crear índices que optimizan búsquedas, y métodos personalizados como '__str__' y 'get_absolute_url' para facilitar la interacción con los datos.
+
+"""
+
 from django.db import models
 from django.urls import reverse
 

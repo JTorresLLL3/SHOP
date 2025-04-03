@@ -14,18 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+from django.contrib import admin # Importa el módulo de administración de Django.
+from django.urls import path, include # Importa funciones para definir URLs.
+from django.conf import settings  # Importa configuración del proyecto.
+from django.conf.urls.static import static # Importa una función para servir archivos estáticos en desarrollo.
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('cart/', include('cart.urls', namespace='cart')),
-    path('orders/', include('orders.urls', namespace='orders')),
-    path('', include('shop.urls', namespace='shop')),
+    path('admin/', admin.site.urls), # Ruta para el panel de administración.
+    path('cart/', include('cart.urls', namespace='cart')), # Incluye las URLs de la app "cart" con el nombre 'cart'.
+    path('orders/', include('orders.urls', namespace='orders')),  # Incluye las URLs de la app "orders" con el nombre 'orders'.
+    path('', include('shop.urls', namespace='shop')), # Ruta principal que incluye las URLs de la app "shop" con el nombre 'shop'.
 ]
 
+# Si el modo DEBUG está activado, añade las rutas para servir archivos estáticos (como imágenes).
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
